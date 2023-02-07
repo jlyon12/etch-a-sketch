@@ -1,2 +1,2 @@
 # etch-a-sketch
-The Oding Project fundamentals javascript project 2
+The Odin Project - JavaScript Fundamentals project #2
