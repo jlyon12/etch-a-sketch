@@ -34,15 +34,15 @@
 .slider-container {
     width:100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     
 }
 #color-slider {
-    width:25px;
-    height:25px;
-    border-radius: 50%;
-    border: 1px solid transparent;
+    width:50px;
+    height:50px;
+    
 }
 
 #main-content {
@@ -56,14 +56,10 @@
 #grid-container {
     width:500px;
     height:500px;
-    /* border: 1px solid black; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+    display:grid;
 }
 
 .grid-square {
     border: 1px solid black;
-    
+   
 }
