@@ -10,8 +10,20 @@
 </head>
 <body>
     <div class="page-wrapper">
-        <div id="grid-container">
-            
+        <div id="sidebar">
+            <h1 id="title">Etch-A-Sketch</h1>
+            <div class="slider-container">
+            <p class="slider-output">Grid Size: <span id=grid-slider-value></span></p>
+            <input type="range" min="3" max="16" value="16" class="slider" id="grid-slider">
+            </div>
+            <div class="slider-container">
+            <p class="slider-output" >Pen Color: <span id=color-slider-value class="hidden"></span></p>
+            <input type="color" value="black" class="slider" id="color-slider">
+            </div>
+            <button type="button" onClick="window.location.reload()">Apply Changes</button>
+        </div>
+        <div id="main-content">
+        <div id="grid-container"></div>    
         </div>
     </div>
 </body>
