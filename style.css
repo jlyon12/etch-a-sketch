@@ -3,4 +3,27 @@
 ::before {
     padding:0px;
     margin:0px;
+    box-sizing: border-box;
+}
+
+.page-wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+#grid-container {
+    width:600px;
+    height:600px;
+    /* border: 1px solid black; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.grid-square {
+    border: 1px solid black;
 }
