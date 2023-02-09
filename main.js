@@ -1,10 +1,10 @@
-const gridContainer = document.querySelector('#grid-container');
 //create sidebar slider values
 const gridSlider = document.getElementById('grid-slider');
 const gridSliderValue = document.getElementById('grid-slider-value');
 gridSliderValue.innerText = gridSlider.value + ' x ' + gridSlider.value;
 gridSlider.oninput = function () {
     gridSliderValue.innerText = this.value + ' x ' + this.value;
+    
 }
 
 const gridSize = Number(gridSlider.value) * Number(gridSlider.value) ;
@@ -18,43 +18,18 @@ colorSlider.oninput = function () {
     penColor = this.value;
 }
 let penColor = colorSliderValue.innerText;
-
-    
 //end sliders
-
-//generate canvas grid via loop 
-gridContainer.style.setProperty(`grid-template-columns`,`repeat(${squareHeight},1fr)`);
-for (let i = 0; i < gridSize; i++) {
-    const gridSquare = document.createElement('div');
-    gridSquare.classList.add('grid-square');
-    gridContainer.appendChild(gridSquare);
-    
-    const gridCollection = document.querySelectorAll('.grid-square');
-    gridCollection.forEach(div => {
-        div.addEventListener('mouseover',(e) => {
-            e.target.style.backgroundColor = penColor;
-               
-        });
-    });
-    
-}
-//end canvas
-
 
 //pen buttons , color reassignment 
 const pen = document.getElementById('pen-btn');
     pen.addEventListener('click' , ()  => { 
         penColor = 'black';
         colorSlider.value = penColor;
-        // penColor = colorSliderValue.innerText;
-        // colorSlider.value= colorSliderValue.innerText;
     });
 
 const eraser = document.getElementById('eraser-btn');
     eraser.addEventListener('click' , ()  => { 
-        penColor = 'white';
-        
-        
+        penColor = 'white';   
     });
 
 const randomHexClr = () => {
@@ -66,10 +41,35 @@ const mysteryPen = document.getElementById('mystery-btn');
     mysteryPen.addEventListener('click' , ()  => { 
         penColor = randomHexClr();
         colorSlider.value = penColor;
-
     });
-
 //end pen buttons
+
+//generate canvas grid via loop 
+const gridContainer = document.querySelector('#grid-container');
+gridContainer.style.setProperty(`grid-template-columns`,`repeat(${squareHeight},1fr)`);
+for (let i = 0; i < gridSize; i++) {
+    const gridSquare = document.createElement('div');
+    gridSquare.classList.add('grid-square');
+    gridContainer.appendChild(gridSquare);
+}
+
+//Change color of grid-blocks on mouse-event
+    const gridCollection = document.querySelectorAll('.grid-square');
+    gridCollection.forEach(div => {
+        div.addEventListener(('mousemove'),(event) => {
+            if(event.buttons == 1) {
+                event.preventDefault();
+                event.target.style.backgroundColor = penColor;
+            }    
+        });
+        div.addEventListener(('mousedown'),(event) => {
+            event.preventDefault();
+            event.target.style.backgroundColor = penColor;        
+        });
+    });  
+//end canvas
+
+
 
 
 
