@@ -23,13 +23,13 @@ let penColor = colorSliderValue.innerText;
 //pen buttons , color reassignment 
 const pen = document.getElementById('pen-btn');
     pen.addEventListener('click' , ()  => { 
-        penColor = 'black';
+        penColor = '#073B4C';
         colorSlider.value = penColor;
     });
 
 const eraser = document.getElementById('eraser-btn');
     eraser.addEventListener('click' , ()  => { 
-        penColor = 'white';   
+        penColor = '#fdf0d5';   
     });
 
 const randomHexClr = () => {
