@@ -12,16 +12,23 @@
     <div class="page-wrapper">
         <div id="sidebar">
             <h1 id="title">Etch-A-Sketch</h1>
+            
+            <button type="button" id="pen-btn">Use Pen</button>
+            <button type="button" id="eraser-btn">Use Eraser</button>
+            <button type="button" id="mystery-btn">Mystery Color Pen</button>
+            <!-- <button type="button" id="turbo-btn">Turbo Pen</button> -->
+
             <div class="slider-container">
                 <p class="slider-output" >Color: <span id=color-slider-value class="hidden"></span></p>
                 <input type="color" value="black" class="slider" id="color-slider">
                 </div>
+
             <div class="slider-container">
             <p class="slider-output">Grid: <span id=grid-slider-value></span></p>
-            <input type="range" min="2" max="64" value="16" class="slider" id="grid-slider">
+            <input type="range" min="2" max="16" value="8" class="slider" id="grid-slider">
             </div>
-            
-            <button type="button" onClick="window.location.reload()">Apply Changes</button>
+
+            <button type="button" onClick="window.location.reload()">Generate New</button>
         </div>
         <div id="main-content">
         <div id="grid-container"></div>    
