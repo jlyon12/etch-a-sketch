@@ -73,9 +73,6 @@ for (let i = 0; i < gridSize; i++) {
 
 
 
-
-
-
 // const turboPen = document.getElementById('turbo-btn');
 //     turboPen.addEventListener('click' , ()  => { 
 //         penColor = randomHexClr();

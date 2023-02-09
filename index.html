@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"> 
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
     <title>Etch-A-Sketch</title>
@@ -11,28 +14,47 @@
 <body>
     <div class="page-wrapper">
         <div id="sidebar">
-            <h1 id="title">Etch-A-Sketch</h1>
             
+            <p id="sidebar-title">Drawing Tools</p>
             <button type="button" id="pen-btn">Use Pen</button>
             <button type="button" id="eraser-btn">Use Eraser</button>
-            <button type="button" id="mystery-btn">Mystery Color Pen</button>
+            <button type="button" id="mystery-btn">Mystery Color</button>
             <!-- <button type="button" id="turbo-btn">Turbo Pen</button> -->
 
             <div class="slider-container">
-                <p class="slider-output" >Color: <span id=color-slider-value class="hidden"></span></p>
+                <p class="slider-output" ><span id=color-slider-value class="hidden"></span></p>
                 <input type="color" value="black" class="slider" id="color-slider">
                 </div>
 
             <div class="slider-container">
-            <p class="slider-output">Grid: <span id=grid-slider-value></span></p>
+            <p class="slider-output"><span id=grid-slider-value></span></p>
             <input type="range" min="2" max="100" value="16" class="slider" id="grid-slider">
             </div>
 
-            <button type="button" onClick="window.location.reload()">Generate New</button>
+            <button type="button" id="new-btn" onClick="window.location.reload()">Generate New</button>
         </div>
         <div id="main-content">
+            <h1 id="title">
+                <span class="clr-100">E</span>
+                <span class="clr-300">t</span>
+                <span class="clr-400">c</span>
+                <span class="clr-500">h</span>
+                <span class="clr-100">-</span>
+                <span class="clr-300">A</span>
+                <span class="clr-400">-</span>
+                <span class="clr-500">S</span>
+                <span class="clr-100">k</span>
+                <span class="clr-300">e</span>
+                <span class="clr-400">t</span>
+                <span class="clr-500">c</span>
+                <span class="clr-100">h</span>
+            </h1>
         <div id="grid-container" draggable="false"></div>    
         </div>
+        
     </div>
+    <footer id="footer">
+        <p>Copyright - <a href="https://github.com/probableactions">probableactions</a></p> <div id="footer-img-wrap"><img class="img-fluid" id="github-logo" src="./images/iconmonstr-github-1-240.png" alt="github logo"></div>
+    </footer>
 </body>
 </html>
