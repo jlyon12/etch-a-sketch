@@ -42,6 +42,19 @@ const mysteryPen = document.getElementById('mystery-btn');
         penColor = randomHexClr();
         colorSlider.value = penColor;
     });
+
+const themeColors = ['#EF476F','#FFD166','#06D6A0','#118AB2','#073B4C'];
+function getThemeColor() { 
+    let randomIndex = Math.floor(Math.random() * themeColors.length);
+    let themeColor = themeColors[randomIndex];
+     return themeColor
+    }
+const themePen = document.getElementById('theme-btn');   
+    themePen.addEventListener('click', () => {
+        penColor = getThemeColor();
+        colorSlider.value = penColor;
+    });
+   
 //end pen buttons
 
 //generate canvas grid via loop 
@@ -68,8 +81,6 @@ for (let i = 0; i < gridSize; i++) {
         });
     });  
 //end canvas
-
-
 
 
 
