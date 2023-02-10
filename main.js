@@ -4,7 +4,6 @@ const gridSliderValue = document.getElementById('grid-slider-value');
 gridSliderValue.innerText = gridSlider.value + ' x ' + gridSlider.value;
 gridSlider.oninput = function () {
     gridSliderValue.innerText = this.value + ' x ' + this.value;
-    
 }
 
 const gridSize = Number(gridSlider.value) * Number(gridSlider.value) ;
@@ -23,12 +22,14 @@ let penColor = colorSliderValue.innerText;
 //pen buttons , color reassignment 
 const pen = document.getElementById('pen-btn');
     pen.addEventListener('click' , ()  => { 
+        themePen.classList.remove('random');
         penColor = '#073B4C';
         colorSlider.value = penColor;
     });
 
 const eraser = document.getElementById('eraser-btn');
     eraser.addEventListener('click' , ()  => { 
+        themePen.classList.remove('random');
         penColor = '#fdf0d5';   
     });
 
@@ -39,6 +40,7 @@ const randomHexClr = () => {
 
 const mysteryPen = document.getElementById('mystery-btn');
     mysteryPen.addEventListener('click' , ()  => { 
+        themePen.classList.remove('random');
         penColor = randomHexClr();
         colorSlider.value = penColor;
     });
@@ -51,8 +53,7 @@ function getThemeColor() {
     }
 const themePen = document.getElementById('theme-btn');   
     themePen.addEventListener('click', () => {
-        penColor = getThemeColor();
-        colorSlider.value = penColor;
+        themePen.classList.add('random');
     });
    
 //end pen buttons
@@ -70,23 +71,29 @@ for (let i = 0; i < gridSize; i++) {
     const gridCollection = document.querySelectorAll('.grid-square');
     gridCollection.forEach(div => {
         div.addEventListener(('mousemove'),(event) => {
-            if(event.buttons == 1) {
+            if (event.buttons == 1 && themePen.classList.contains('random')) {
+                event.preventDefault();
+                penColor = getThemeColor();
+                colorSlider.value = penColor;
+                event.target.style.backgroundColor = penColor;
+            }
+
+            else if (event.buttons == 1) {
                 event.preventDefault();
                 event.target.style.backgroundColor = penColor;
             }    
         });
         div.addEventListener(('mousedown'),(event) => {
+            if (themePen.classList.contains('random')) {
+                event.preventDefault();
+                penColor = getThemeColor();
+                colorSlider.value = penColor;
+                event.target.style.backgroundColor = penColor;
+            }
             event.preventDefault();
             event.target.style.backgroundColor = penColor;        
         });
     });  
 //end canvas
 
-
-
-// const turboPen = document.getElementById('turbo-btn');
-//     turboPen.addEventListener('click' , ()  => { 
-//         penColor = randomHexClr();
-
-//     });
 
