@@ -63,6 +63,10 @@
     color:var(--clr-500);
 }
 
+.cycle-active {
+    background-color:var(--clr-300);
+}
+
 .slider-container {
     width:100%;
     display: flex;
@@ -146,6 +150,11 @@ button:hover {
     background-color: var(--clr-400);
     color:var(--clr-light);
 }
+#theme-btn:hover {
+    background-color: var(--clr-500);
+    color:var(--clr-light);
+}
+
 #new-btn:hover {
     background-color: var(--clr-500);
     color:var(--clr-light);

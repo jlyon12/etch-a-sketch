@@ -23,6 +23,9 @@ let penColor = colorSliderValue.innerText;
 const pen = document.getElementById('pen-btn');
     pen.addEventListener('click' , ()  => { 
         themePen.classList.remove('random');
+        mysteryPen.classList.remove('random');
+        themePenCycle.classList.remove('cycle-active');
+        mysteryPenCycle.classList.remove('cycle-active');
         penColor = '#073B4C';
         colorSlider.value = penColor;
     });
@@ -30,6 +33,9 @@ const pen = document.getElementById('pen-btn');
 const eraser = document.getElementById('eraser-btn');
     eraser.addEventListener('click' , ()  => { 
         themePen.classList.remove('random');
+        mysteryPen.classList.remove('random');
+        themePenCycle.classList.remove('cycle-active');
+        mysteryPenCycle.classList.remove('cycle-active');
         penColor = '#fdf0d5';   
     });
 
@@ -41,6 +47,9 @@ const randomHexClr = () => {
 const mysteryPen = document.getElementById('mystery-btn');
     mysteryPen.addEventListener('click' , ()  => { 
         themePen.classList.remove('random');
+        mysteryPen.classList.remove('random');
+        themePenCycle.classList.remove('cycle-active');
+        mysteryPenCycle.classList.remove('cycle-active');
         penColor = randomHexClr();
         colorSlider.value = penColor;
     });
@@ -51,10 +60,34 @@ function getThemeColor() {
     let themeColor = themeColors[randomIndex];
      return themeColor
     }
+
 const themePen = document.getElementById('theme-btn');   
     themePen.addEventListener('click', () => {
-        themePen.classList.add('random');
+        themePen.classList.remove('random');
+        mysteryPen.classList.remove('random');
+        themePenCycle.classList.remove('cycle-active');
+        mysteryPenCycle.classList.remove('cycle-active');
+        penColor = getThemeColor();
+        colorSlider.value = penColor;
     });
+
+const themePenCycle = document.getElementById('theme-cycle-btn');
+    themePenCycle.addEventListener('click', () => {
+        themePen.classList.toggle('random');
+        themePenCycle.classList.toggle('cycle-active');
+        
+        penColor = getThemeColor();
+        colorSlider.value = penColor;
+    });
+
+const mysteryPenCycle = document.getElementById('mystery-cycle-btn');
+mysteryPenCycle.addEventListener('click', () => {
+    mysteryPenCycle.classList.toggle('cycle-active');
+    mysteryPen.classList.toggle('random');
+    
+    penColor = randomHexClr();
+    colorSlider.value = penColor;
+});
    
 //end pen buttons
 
@@ -77,6 +110,12 @@ for (let i = 0; i < gridSize; i++) {
                 colorSlider.value = penColor;
                 event.target.style.backgroundColor = penColor;
             }
+            else if (event.buttons == 1 && mysteryPen.classList.contains('random')) {
+                event.preventDefault();
+                penColor = randomHexClr();
+                colorSlider.value = penColor;
+                event.target.style.backgroundColor = penColor;
+            }
 
             else if (event.buttons == 1) {
                 event.preventDefault();
@@ -90,8 +129,16 @@ for (let i = 0; i < gridSize; i++) {
                 colorSlider.value = penColor;
                 event.target.style.backgroundColor = penColor;
             }
+            else if (mysteryPen.classList.contains('random')) {
+                event.preventDefault();
+                penColor = randomHexClr();
+                colorSlider.value = penColor;
+                event.target.style.backgroundColor = penColor;
+            }
+            else {
             event.preventDefault();
-            event.target.style.backgroundColor = penColor;        
+            event.target.style.backgroundColor = penColor;      
+            }  
         });
     });  
 //end canvas
