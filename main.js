@@ -75,7 +75,8 @@ const themePenCycle = document.getElementById('theme-cycle-btn');
     themePenCycle.addEventListener('click', () => {
         themePen.classList.toggle('random');
         themePenCycle.classList.toggle('cycle-active');
-        
+        mysteryPen.classList.remove('random');
+        mysteryPenCycle.classList.remove('cycle-active');
         penColor = getThemeColor();
         colorSlider.value = penColor;
     });
@@ -84,7 +85,8 @@ const mysteryPenCycle = document.getElementById('mystery-cycle-btn');
 mysteryPenCycle.addEventListener('click', () => {
     mysteryPenCycle.classList.toggle('cycle-active');
     mysteryPen.classList.toggle('random');
-    
+    themePen.classList.remove('random');
+    themePenCycle.classList.remove('cycle-active');
     penColor = randomHexClr();
     colorSlider.value = penColor;
 });
