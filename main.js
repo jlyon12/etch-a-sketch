@@ -36,7 +36,7 @@ const eraser = document.getElementById('eraser-btn');
         mysteryPen.classList.remove('random');
         themePenCycle.classList.remove('cycle-active');
         mysteryPenCycle.classList.remove('cycle-active');
-        penColor = '#fdf0d5';   
+        penColor = '#cacaca';
     });
 
 const randomHexClr = () => {
@@ -58,7 +58,7 @@ const themeColors = ['#EF476F','#FFD166','#06D6A0','#118AB2','#073B4C'];
 function getThemeColor() { 
     let randomIndex = Math.floor(Math.random() * themeColors.length);
     let themeColor = themeColors[randomIndex];
-     return themeColor
+     return themeColor;
     }
 
 const themePen = document.getElementById('theme-btn');   
