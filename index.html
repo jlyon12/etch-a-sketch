@@ -1,69 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
-    <title>Etch-A-Sketch</title>
-</head>
-<body>
-    <div class="page-wrapper">
-        <h1 id="title">
-            <span class="clr-100">E</span>
-            <span class="clr-300">t</span>
-            <span class="clr-400">c</span>
-            <span class="clr-500">h</span>
-            <div class="break"></div>
-            <span class="clr-100">-</span>
-            <span class="clr-300">A</span>
-            <span class="clr-400">-</span>
-            <div class="break"></div>
-            <span class="clr-500">S</span>
-            <span class="clr-100">k</span>
-            <span class="clr-300">e</span>
-            <span class="clr-400">t</span>
-            <span class="clr-500">c</span>
-            <span class="clr-100">h</span>
-        </h1>
-        <div class="sub-wrapper">
-        <div id="sidebar">
-            
-            <p id="sidebar-title">Drawing Tools</p>
-            <button type="button" id="pen-btn">Use Pen</button>
-            <button type="button" id="eraser-btn">Use Eraser</button>
-            <div class="button-cyclebox">
-                <button type="button" id="mystery-btn">Mystery Color</button>
-                <button type="button" id="mystery-cycle-btn">Randomize</button>
-            </div>
-            <div class="button-cyclebox">
-                <button type="button" id="theme-btn">Theme Color</button>
-                <button type="button" id="theme-cycle-btn">Randomize</button>
-            </div>
-            <div class="break"></div>
-            <div class="slider-container">
-                <p class="slider-output" ><span id=color-slider-value class="hidden"></span></p>
-                <input type="color" value="#073B4C" class="slider" id="color-slider">
-            <p class="slider-output"><span id=grid-slider-value></span></p>
-            <input type="range" min="2" max="48" value="12" class="slider" id="grid-slider">
-            </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Itim&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<script src="main.js" defer></script>
+		<title>Etch-A-Sketch</title>
+	</head>
+	<body>
+		<div class="page-wrapper">
+			<h1 id="title">
+				<span class="clr-100">E</span>
+				<span class="clr-300">t</span>
+				<span class="clr-400">c</span>
+				<span class="clr-500">h</span>
+				<div class="break"></div>
+				<span class="clr-100">-</span>
+				<span class="clr-300">A</span>
+				<span class="clr-400">-</span>
+				<div class="break"></div>
+				<span class="clr-500">S</span>
+				<span class="clr-100">k</span>
+				<span class="clr-300">e</span>
+				<span class="clr-400">t</span>
+				<span class="clr-500">c</span>
+				<span class="clr-100">h</span>
+			</h1>
+			<div class="sub-wrapper">
+				<div id="sidebar">
+					<p id="sidebar-title">Drawing Tools</p>
+					<button type="button" id="pen-btn">Use Pen</button>
+					<button type="button" id="eraser-btn">Use Eraser</button>
+					<div class="button-cyclebox">
+						<button type="button" id="mystery-btn">Mystery Color</button>
+						<button type="button" id="mystery-cycle-btn">Randomize</button>
+					</div>
+					<div class="button-cyclebox">
+						<button type="button" id="theme-btn">Theme Color</button>
+						<button type="button" id="theme-cycle-btn">Randomize</button>
+					</div>
+					<div class="break"></div>
+					<div class="slider-container">
+						<p class="slider-output">
+							<span id="color-slider-value" class="hidden"></span>
+						</p>
+						<input
+							type="color"
+							value="#073B4C"
+							class="slider"
+							id="color-slider"
+						/>
+						<p class="slider-output"><span id="grid-slider-value"></span></p>
+						<input
+							type="range"
+							min="2"
+							max="48"
+							value="12"
+							class="slider"
+							id="grid-slider"
+						/>
+					</div>
 
-            <button type="button" id="new-btn" onClick="window.location.reload()">Generate New</button>
-        </div>
-        
-            
-        <div id="grid-container" draggable="false"></div>    
-      
-        
-    </div>
-    <footer id="footer">
-        <p>Copyright - <a href="https://github.com/probableactions">probableactions</a></p> <div id="footer-img-wrap"><img class="img-fluid" id="github-logo" src="./images/iconmonstr-github-1-240.png" alt="github logo"></div>
-    </footer>
-</div>
-    
-</body>
+					<button type="button" id="new-btn" onClick="window.location.reload()">
+						Generate New
+					</button>
+				</div>
+
+				<div id="grid-container" draggable="false"></div>
+			</div>
+			<footer id="footer">
+				<p>Copyright - <a href="https://github.com/jlyon12">jlyon12</a></p>
+				<div id="footer-img-wrap">
+					<img
+						class="img-fluid"
+						id="github-logo"
+						src="./images/iconmonstr-github-1-240.png"
+						alt="github logo"
+					/>
+				</div>
+			</footer>
+		</div>
+	</body>
 </html>
